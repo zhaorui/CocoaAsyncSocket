@@ -29,7 +29,7 @@
 #import <sys/types.h>
 
 
-#if 0
+#if 1
 
 // Logging Enabled - See log level below
 

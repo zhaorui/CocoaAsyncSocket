@@ -6,10 +6,13 @@
 #import <mach/host_info.h>
 #import <libkern/OSAtomic.h>
 #import <Availability.h>
-#if TARGET_OS_IPHONE
-    #import <UIKit/UIDevice.h>
-#endif
 
+#if TARGET_OS_IOS
+    #import <UIKit/UIDevice.h>
+    #import <UIKit/UIApplication.h>
+#elif !defined(DD_CLI) && __has_include(<AppKit/NSApplication.h>)
+    #import <AppKit/NSApplication.h>
+#endif
 /**
  * Welcome to Cocoa Lumberjack!
  * 

@@ -17,9 +17,12 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
+        .target(name: "CocoaLumberjack",
+               path: "Source/Vendor/CocoaLumberjack",
+               publicHeadersPath: ""),
         .target(
             name: "CocoaAsyncSocket",
-            dependencies: [],
+            dependencies: ["CocoaLumberjack"],
             path: "Source/GCD",
             publicHeadersPath: ""),
 
